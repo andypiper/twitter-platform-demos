@@ -8,7 +8,10 @@ These demos were originally created by [Romain Huet](https://twitter.com/romainh
 
 Here is an overview of the demos in this repository:
 
- * Monitoring and filtering Tweets in real time from the [Streaming APIs](https://dev.twitter.com/streaming/public)
+ * Monitoring and filtering Tweets in real time from the public [Streaming APIs](https://dev.twitter.com/streaming/public)
+   * Count Tweets from the [sample](https://dev.twitter.com/streaming/reference/get/statuses/sample) endpoint
+   * Display Tweets on a map based on browser geolocation
+   * Find and curate Tweets into a [Collection](https://dev.twitter.com/rest/collections)
  * Tweeting pictures from a [Raspberry Pi](http://www.raspberrypi.org/) and its Camera Module
  * Controlling a [Parrot AR.Drone](http://ardrone2.parrot.com/) from Tweets and acknowledging commands
 
