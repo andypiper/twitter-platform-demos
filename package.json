@@ -1,11 +1,24 @@
 {
   "name": "twitter-platform-demos",
   "description": "Twitter Platform Demos using Streaming & REST APIs in Node.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Romain Huet",
     "email": "romain@twitter.com",
-    "url": "https://dev.twitter.com/"
+    "url": "https://twitter.com/romainhuet"
+  },
+  "contributors": [{
+    "name": "Andy Piper",
+    "email": "andypiper@twitter.com",
+    "url": "https://twitter.com/andypiper"
+  }],
+  "license": "MIT",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/andypiper/twitter-platform-demos.git"
+  },
+  "bugs": {
+    "url" : "https://github.com/andypiper/twitter-platform-demos/issues"
   },
   "dependencies": {
     "twit": "*",

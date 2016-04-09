@@ -23,8 +23,8 @@ console.log('Listening on port 3000');
 // Handler for the server to return the proper HTML files.
 function handler(req, res) {
   var file = path.join(__dirname, 'count.html');
-  if (req.url.indexOf('custom') !== -1) {
-    file = path.join(__dirname, 'custom.html');
+  if (req.url.indexOf('collection') !== -1) {
+    file = path.join(__dirname, 'collection.html');
   } else if (req.url.indexOf('geolocation') !== -1) {
     file = path.join(__dirname, 'geolocation.html');
   } else if (req.url.indexOf('assets') !== -1) {
@@ -39,8 +39,6 @@ function handler(req, res) {
     }
   });
 }
-
-io.set('log level', 0);
 
 // Socket connection.
 io.sockets.on('connection', function(socket) {
@@ -89,14 +87,15 @@ io.sockets.on('connection', function(socket) {
   // Listen to the `timeline` event.
   socket.on('timeline', function(params) {
     if (params.action === 'add' && params.timelineId && params.tweetId) {
-      // Note: Access to the Custom Timelines API Beta is needed for this call.
-      twitter.post('beta/timelines/custom/add', {
+      twitter.post('collections/entries/add', {
         id: params.timelineId,
         tweet_id: params.tweetId
       },
       function(err, data) {
         if (!err && data) {
-          console.log('Tweet added to the Custom Timeline.');
+          console.log('Tweet added to the Collection.');
+        } else {
+          console.log(err);
         }
       });
     }

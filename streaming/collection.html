@@ -18,7 +18,7 @@
         </div>
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="https://twitter.com/romainhuet" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @romainhuet</a>
+            <a href="https://twitter.com/andypiper" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @andypiper</a>
           </li>
           <li>
             <a href="https://twitter.com/TwitterDev" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @TwitterDev</a>
@@ -27,10 +27,6 @@
       </div>
     </nav>
     <div class="content container">
-      <div class="alert alert-warning fade in">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <p>This demo uses the <a href="https://dev.twitter.com/docs/custom-timelines">Custom Timelines API Beta</a>, but the main functionality works without it. Please <a href="https://dev.twitter.com/form/request-participation-custom-timelines-beta-api">apply for access</a> if you would like to participate in the beta program.</p>
-      </div>
       <div class="row">
         <div class="col-md-6">
           <div class="panel panel-default" id="panel-streaming-options">
@@ -162,6 +158,8 @@
               </div>
               <div id="collapse-collection" class="panel-collapse collapse">
                 <div class="panel-body">
+                  <a class="twitter-timeline" data-widget-id="718783922612604928" href="https://twitter.com/andypiper/timelines/543399461108469761" data-custom-timeline-id="543399461108469761" data-theme="light">An example Collection</a>
+
                   <a class="twitter-timeline" data-widget-id="398522355804151808" data-theme="light" data-custom-timeline-id="401517619594805248">Romain’s Demo Collection</a>
                 </div>
               </div>
@@ -175,10 +173,10 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      var socket = io.connect('http://localhost');
+      var socket = io.connect();
       var tweets = [];
       var tweetIndex = -1;
-      var timelineId = 'custom-401517619594805248';
+      var timelineId = 'custom-543399461108469761';
       var isStreaming = false;
       var map, rectangle, rectangleNotice, errorNotice, currentLocation;
 
@@ -252,7 +250,7 @@
         }
       }
 
-      // Add the current Tweet to the Custom Timeline.
+      // Add the current Tweet to the Collection
       function addTweetToTimeline() {
         socket.emit('timeline', {
           action: 'add',
