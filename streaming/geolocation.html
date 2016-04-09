@@ -39,11 +39,11 @@
       </div>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+    <script src="//maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      var socket = io.connect('http://localhost');
+      var socket = io.connect();
       var map, markers = [];
       var currentLocation;
 
